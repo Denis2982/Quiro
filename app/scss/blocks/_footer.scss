@@ -1,0 +1,85 @@
+.footer {
+    max-width: 1440px;
+    background: $terciary;
+    margin: 0 auto;
+    &__inner {
+        padding: 106px 40px 80px 12px;
+        display: flex;
+        gap: 108px;
+        @include desctop-small{
+            @media (max-width: $desctop-small) {
+                gap: 50px;
+                padding: 90px 15px 80px;
+                justify-content: space-between;                
+            }
+        }
+        @include tablet{
+            @media (max-width: $tablet) {
+                padding: 50px 15px 50px;
+                gap: 30px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                padding: 40px 15px 40px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                padding: 20px 15px 20px;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+    &__desc {
+        max-width: 430px;
+        @include desctop-small{
+            @media (max-width: $desctop-small) {
+                max-width: 300px;                
+            }
+        }
+        @include tablet{
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+    &__desc-title {
+        @include text($ff, 24px, 600, 28px, $paragraph);
+        margin-bottom: 26px;
+    }    
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__contact-address,
+    &__contact-phone, 
+    &__contact-email {
+        margin-bottom: 37px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__contact-title,
+    &__time-title {
+        @include text($ff, 20px, 600, 23px, $paragraph);
+        margin-bottom: 9px;
+    }
+    &__time{
+        @include mobile{
+            @media (max-width: $mobile) {
+                display: none;
+            }
+        }
+    }
+    &__time-list {
+        margin-top: 17px;
+    }
+    &__time-item {
+        margin-bottom: 15px;
+    }
+}

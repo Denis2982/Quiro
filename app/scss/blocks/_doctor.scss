@@ -1,0 +1,115 @@
+.doctor {
+    margin-bottom: 129px;
+    text-align: center;
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            margin-bottom: 60px;
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 40px;
+        }
+    }
+    .title{
+        margin-bottom: 70px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                margin-bottom: 50px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                margin-bottom: 40px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                margin-bottom: 25px;
+            }
+        }
+    }    
+    .desc{
+        max-width: 837px;
+        margin: 0 auto 123px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                margin: 0 auto 80px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                margin: 0 auto 60px;
+                padding: 0 20px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                margin: 0 auto 40px;
+            }
+        }
+    }    
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    }
+    &__card {
+        background: $terciary;
+        border-radius: 20px;
+        padding: 44px 38px 33px;
+        text-align: left;
+        &:hover{
+            box-shadow: 5px 6px 4px 2px $black;
+        }
+    }
+    &__card-top {
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    &__card-title {
+        @include text($ff, 20px, 600, 23px, $paragraph);
+    }
+    &__card-subtitle {
+        @include text($ff, 16px, 400, 19px, $text);
+    }
+    &__card-text {
+        @include text($ff, 16px, 400, 19px, $text);
+        margin-bottom: 28px;
+    }
+    &__card-btn {       
+        display: inline-block;
+        padding: 10px 49px;
+        background-color: $primary;
+        border-radius: 50px;
+        border: 0;
+        width: 100%;
+        text-align: center;
+        @include desctop-small{
+            @media (max-width: $desctop-small) {
+                padding: 10px 25px;                
+            }
+        }
+    }
+    &__card-link {
+        @include text($ff, 20px, 600, 23px, $terciary);
+        @include desctop-small{
+            @media (max-width: $desctop-small) {
+                font-size: 18px;
+            }
+        }        
+    }
+}

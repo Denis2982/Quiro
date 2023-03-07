@@ -1,0 +1,28 @@
+.doctor-page {
+    margin-bottom: 100px;
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            margin-bottom: 60px;
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 40px;
+        }
+    }
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

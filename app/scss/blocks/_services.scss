@@ -1,0 +1,102 @@
+.services {
+    margin-bottom: 111px;
+    text-align: center;
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            margin-bottom: 60px;
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 40px;
+        }
+    }
+    .title{
+        margin-bottom: 70px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                margin-bottom: 50px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                margin-bottom: 40px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                margin-bottom: 25px;
+            }
+        }
+    }    
+    .desc{
+        max-width: 837px;
+        margin: 0 auto 123px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                margin: 0 auto 80px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                margin: 0 auto 60px;
+                padding: 0 20px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                margin: 0 auto 40px;
+            }
+        }
+    }
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        @include tablet{
+            @media (max-width: $tablet) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+    &__card {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: minmax(60px, auto) 1fr 1fr auto;
+        background: $terciary;
+        border-radius: 15px;
+        padding: 46px 26px;
+        transition: $transition; 
+        @include tablet{
+            @media (max-width: $tablet) {
+                padding: 30px 20px;
+            }
+        }                  
+        &-title {
+            @include text($ff, 24px, 600, 28px, $paragraph);
+            margin: 27px 0 17px;
+        }    
+        &-text {
+            @include text($ff, 16px, 400, 19px, $text);
+            margin-bottom: 17px;
+        }    
+        &-link {
+            @include flex(flex, center, center);
+            @include text($ff, 16px, 600, 19px, $primary);
+            gap: 2px;
+        }
+        &:hover{
+            box-shadow: 5px 6px 4px 2px $black;
+            background-color: $primary;
+            .services__card-title,
+            .services__card-text,
+            .services__card-link{
+                color: $white;
+            }
+            svg path{
+                fill: $white;
+            }
+        }
+    }    
+}
+

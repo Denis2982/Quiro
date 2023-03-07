@@ -1,0 +1,107 @@
+.join {
+    margin-bottom: 131px;
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            margin-bottom: 60px;
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 40px;
+        }
+    }
+    &__inner {
+        max-width: 1158px;
+        background-color: $darkpurple;
+        border-radius: 10px;
+        margin: 0 auto;
+        padding: 80px 220px;
+        text-align: center;
+        @include tablet{
+            @media (max-width: $tablet) {
+                padding: 60px 150px;
+            }
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                padding: 40px 60px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                padding: 20px 20px;
+            }
+        }
+    }
+    &__title {
+        @include text($ff, 36px, 700, 42px, $white);
+        margin-bottom: 47px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__form {
+        position: relative;
+        @include mobile{
+            @media (max-width: $mobile) {
+                position: static;
+            }
+        }
+    }
+    &__form-input {
+        @include input(inline-block, 0, 50px, none, $terciary);       
+        padding: 20px 180px 20px 30px;       
+        width: 100%;
+        color: $darkpurple;      
+        &::placeholder{
+            @include text($ff, 16px, 400, 19px, $darkgrey);
+        }
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                padding: 15px 150px 15px 15px; 
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                padding: 10px 10px;
+            }
+        }
+    }
+    &__form-button {
+        @include text($ff, 20px, 600, 23px, $white);
+        background: #8842F0;
+        border-radius: 22px; 
+        padding: 10px 25px;
+        border: 0;
+        position: absolute;   
+        top: 50%;
+        transform: translateY(-50%);
+        right: 14px;
+        cursor: pointer;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                padding: 8px 15px;
+                font-size: 18px;
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                position: static;
+                transform: translateY(0);
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+

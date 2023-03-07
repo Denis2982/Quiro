@@ -1,0 +1,18 @@
+@import 'normalize';
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'global';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
+
+@import 'blocks/header';
+@import 'blocks/main';
+@import 'blocks/services';
+@import 'blocks/doctor';
+@import 'blocks/join';
+@import 'blocks/footer';
+@import 'blocks/services-page';
+@import 'blocks/gallery';
+@import 'blocks/contact';
+@import 'blocks/doctors';

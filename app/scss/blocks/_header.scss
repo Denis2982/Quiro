@@ -1,0 +1,162 @@
+.header {
+    padding: 50px 0;
+    @include flex(flex, space-between, center);
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+           padding: 30px 0;
+        }
+    } 
+    @include mobile{
+        @media (max-width: $mobile) {
+            padding: 20px 0;
+        }
+    }   
+    &__logo {        
+        @include text($ff, 24px, 600, 28px, $paragraph);
+        @include mobile{
+            @media (max-width: $mobile) {
+                display: none;
+            }
+        }   
+    }
+    &__logo-mini{
+        display: none;
+        @include mobile{
+            @media (max-width: $mobile) {
+                display: block;
+                @include text($ff, 28px, 700, 38px, $paragraph);
+                letter-spacing: 5px;
+                text-shadow: 5px 3px 5px $darkgrey;
+            }
+        }   
+    }
+    &__search {
+        position: relative;
+        @include tablet{
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+    &__search-input {
+        @include input(inline-block, 0, 50px, none, $black);
+        @include text($ff, 14px, 400, 16px, $white);
+        padding: 13px 18px;              
+        padding-right: 40px;        
+        &::placeholder{
+            color: $white;
+        }
+    }
+    &__search-img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        cursor: pointer;
+    }
+}
+.nav {
+    &__list {
+        @include flex(flex, flex-start, center);
+        gap: 24px;
+        transition: $transition;        
+        @include tablet{
+            @media (max-width: $tablet) {
+                position: fixed;
+                padding: 0 30px;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+                z-index: 5;
+                background: $terciary;
+                left: 0;
+                top: 0;
+                gap: 40px;
+                box-shadow: 3px 3px 8px 1px $darkgrey;
+                transform: translateX(-150%);
+                &--open{
+                    transform: translateX(0);
+                }
+            }
+        }        
+    }
+    &__list-link {
+        @include text($ff, 16px, 400, 19px, $black);
+        position: relative;
+        transition: $transition;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 1px;
+            width: 0;
+            left: 50%;
+            bottom: -3px;
+            transform: translateX(-50%);
+            background-color: $primary;
+            transition: $transition;
+        }
+        &--active {
+            color: $primary;
+            font-weight: 600;
+            &::before{
+                width: calc(100% - 10px);
+            }
+        }
+        &:hover{
+            color: $primary;        
+        }        
+    }
+    &__burger{
+        @include flex(none, flex-end, center);        
+        position: relative;
+        z-index: 5;        
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+        @include tablet{
+            @media (max-width: $tablet){
+                display: flex;
+            }
+        }
+        span{
+            height: 2px;
+            width: 100%;
+            border-radius: 4px;
+            transform: scale(1);
+            background-color: $darkgrey;
+            transition: $transition;
+        }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            border-radius: 4px;
+            background-color: $darkgrey;
+            transition: $transition;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &--open span {
+            transform: scale(0);
+        }
+        &--open::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%);
+        }
+        &--open::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+        }
+    }
+    & ul{
+        @media (max-width: $tablet) {
+            padding: 80px;
+        }
+    }
+}

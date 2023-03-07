@@ -1,0 +1,32 @@
+body{
+    font-family: $ff;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.title{
+    @include text($ff, 48px, 700, 56px, $paragraph);
+    @include tablet{
+        @media (max-width: $tablet) {
+            @include text($ff, 40px, 700, 50px, $paragraph);
+        }
+    }
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            @include text($ff, 32px, 700, 40px, $paragraph);
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            @include text($ff, 28px, 700, 36px, $paragraph);
+        }
+    }
+}
+
+.desc{
+    @include text($ff, 16px, 400, 19px, $paragraph);
+}

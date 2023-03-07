@@ -1,0 +1,163 @@
+.page-name--contact {
+    margin-bottom: 50px;
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 30px;
+        }
+    }
+}
+.map {
+    margin-bottom: 100px;
+    @include tablet-small{
+        @media (max-width: $tablet-small) {
+            margin-bottom: 60px;            
+        }
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 40px;
+        }
+    }
+    & iframe {
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                height: 400px;           
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                height: 250px;
+            }
+        }
+    }
+}
+.contact-page {
+    &__social {
+        @include flex(flex, center, center);
+        gap: 80px; 
+        margin-bottom: 50px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                gap: 50px;           
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+        }       
+    }
+    &__social-icon img{
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                height: 40px;           
+            }
+        }
+    }
+    &__desc {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    &__text {
+        @include text($ff, 24px, 400, 32px, $darkpurple);
+        margin-bottom: 30px;
+        @include mobile{
+            @media (max-width: $mobile) {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 20px;
+            }
+        }       
+    }
+    &__address-title {
+        @include text($ff, 32px, 600, 42px, $darkpurple);
+        margin-bottom: 20px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                @include text($ff, 28px, 600, 34px, $darkpurple);      
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                @include text($ff, 24px, 600, 28px, $darkpurple);
+            }
+        }
+    }
+    &__address-desc{
+        @include text($ff, 24px, 600, 32px, $paragraph);
+        margin-bottom: 40px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                @include text($ff, 20px, 600, 26px, $darkpurple);
+                margin-bottom: 30px;      
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                @include text($ff, 18px, 600, 24px, $darkpurple);
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__address-phone,
+    &__address-email {
+        margin-bottom: 40px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                margin-bottom: 30px;      
+            }
+        }
+        @include mobile{
+            @media (max-width: $mobile) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__form {
+        @include flex(flex, space-between, center);
+        flex-wrap: wrap;
+        gap: 15px;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                justify-content: center;      
+            }
+        }        
+    }
+    &__form-input {
+        @include input(inline-block, 1px solid $darkgrey, 20px, none, $terciary);       
+        padding: 10px 20px;       
+        width: 45%;
+        color: $darkpurple;
+        @include tablet-small{
+            @media (max-width: $tablet-small) {
+                width: 100%;      
+            }
+        }        
+        &::placeholder{
+            @include text($ff, 16px, 400, 19px, $darkgrey);
+        }
+    }
+    &__form-area {
+        width: 100%;
+        border: 1px solid $darkgrey;
+        background: $terciary;
+        border-radius: 20px;
+        padding: 15px;
+        min-height: 125px;
+        resize: none;
+        &::placeholder{
+            @include text($ff, 16px, 400, 19px, $darkgrey);
+        }
+    }
+    &__form-btn{
+        @include text($ff, 20px, 600, 23px, $white);
+        background: #8842F0;
+        border-radius: 22px; 
+        padding: 10px 50px;
+        border: 0;
+        cursor: pointer;
+    }
+}
